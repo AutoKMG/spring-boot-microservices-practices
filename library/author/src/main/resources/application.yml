@@ -26,4 +26,4 @@ spring:
 
 application:
   config:
-    book-url: http://localhost:8090/api/v1/book
+    book-url: http://localhost:8222/api/v1/book
