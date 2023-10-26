@@ -20,6 +20,11 @@ public class BookController {
         return service.getAllBooks();
     }
 
+    @GetMapping("/{author-id}")
+    public List<Book> getAllBooksWithAuthorId(@PathVariable("author-id") Integer id){
+        return service.getAllBooksWithAuthorId(id);
+    }
+
     @PostMapping
     public void saveBook(@RequestBody BookDto book){
         service.saveBook(book);

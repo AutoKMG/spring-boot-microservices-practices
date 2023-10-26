@@ -1,24 +1,18 @@
 package com.khaledsaleh.author.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+import java.util.List;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Author {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
-
+public class FullAuthorResponse {
     private String firstName;
     private String lastName;
+    private List<Book> books;
 }

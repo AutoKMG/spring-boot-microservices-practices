@@ -17,6 +17,10 @@ public class BookService {
         return repository.findAll();
     }
 
+    public List<Book> getAllBooksWithAuthorId(Integer authorId){
+        return repository.findAllByAuthorId(authorId);
+    }
+
     public void saveBook(BookDto book){
         Book newBook = new Book();
         newBook.setBookName(book.getBookName());
