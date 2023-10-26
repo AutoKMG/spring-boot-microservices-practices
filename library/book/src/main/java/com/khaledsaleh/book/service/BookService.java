@@ -13,15 +13,15 @@ import java.util.List;
 public class BookService {
     private final BookRepository repository;
 
+    public List<Book> getAllBooks(){
+        return repository.findAll();
+    }
+
     public void saveBook(BookDto book){
         Book newBook = new Book();
         newBook.setBookName(book.getBookName());
         newBook.setBookCategory(book.getBookCategory());
         newBook.setAuthorId(book.getAuthorId());
         repository.save(newBook);
-    }
-
-    public List<Book> findAllBooks(){
-        return repository.findAll();
     }
 }

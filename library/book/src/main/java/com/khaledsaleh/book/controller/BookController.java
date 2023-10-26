@@ -4,13 +4,7 @@ import com.khaledsaleh.book.model.dto.BookDto;
 import com.khaledsaleh.book.model.entity.Book;
 import com.khaledsaleh.book.service.BookService;
 import lombok.RequiredArgsConstructor;
-import org.apache.http.protocol.HTTP;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,11 +17,11 @@ public class BookController {
 
     @GetMapping
     public List<Book> getAllBooks(){
-        return service.findAllBooks();
+        return service.getAllBooks();
     }
 
     @PostMapping
-    public void saveBook(BookDto book){
+    public void saveBook(@RequestBody BookDto book){
         service.saveBook(book);
     }
 }
