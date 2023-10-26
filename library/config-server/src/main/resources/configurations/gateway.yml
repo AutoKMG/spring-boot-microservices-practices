@@ -21,5 +21,10 @@ spring:
           predicates:
             - Path=/api/v1/author/**
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 server:
   port: 8222
